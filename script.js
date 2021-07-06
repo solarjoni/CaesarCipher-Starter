@@ -3,6 +3,27 @@
 function caesar_cipher(string, key) {
     
   // Up to you to write!
+  var output = "";
+
+  for (var i = 0; i < string.length; i++) {
+    var unicode = string.charCodeAt(i);
+    if ((unicode >= 65) && (unicode <=90)) {
+      var res_unicode = ((unicode - 65 + key) % 26) + 65;
+      output += String.fromCharCode(res_unicode);
+    } 
+    else if ((unicode >= 97) && (unicode <=122)) {
+      var res_unicode = ((unicode - 97 + key) % 26) + 97;
+      output += String.fromCharCode(res_unicode);
+    }
+
+    else {
+      output += String.fromCharCode(res_unicode);
+    }
+
+  }
+
+  console.log(output);
+  return output;
 
 }
 
